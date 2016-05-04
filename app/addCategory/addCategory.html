@@ -1,0 +1,74 @@
+<html lang="en">
+  <head>
+   
+    <title></title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="blog.css" rel="stylesheet">
+
+    <script type="text/javascript" src="spin.min.js"></script>
+		 <script type="text/javascript" src="ladda.min.js"></script>
+		 <link rel="stylesheet" type="text/css" href="ladda-themeless.min.css">
+    
+  </head>
+
+  <body ng-controller="AddCategoryCtrl">
+
+    <div class="blog-masthead">
+      <div class="container">
+        <nav class="blog-nav">
+          <a class="blog-nav-item " href="#/welcome">Home</a>
+          <a class="blog-nav-item active" href="#/addPost">Add Post</a>
+          <a class="blog-nav-item active" href="#/addCategory">Add Category</a>
+          <a class="blog-nav-item " style="cursor:pointer;" ng-click="logout();">Logout</a>
+        </nav>
+      </div>
+    </div>
+
+    <div class="container" >
+
+      	<form class="form-horizontal" ng-submit="AddCategory()">
+			<fieldset>
+
+			<!-- Form Name -->
+			<legend>Create Category</legend>
+
+			<!-- Text input-->
+			<div class="form-group">
+			  <label class="col-md-4 control-label" for="txtTitle">Title</label>  
+			  <div class="col-md-4">
+			  <input id="txtTitle" name="txtTitle" ng-model="category.title" type="text" placeholder="placeholder" class="form-control input-md">
+			  </div>
+			</div>
+
+			<!-- Button -->
+			<div class="form-group">
+			  <label class="col-md-4 control-label" for="singlebutton"></label>
+			  <div class="col-md-4">
+			   
+
+
+			<button ladda-loading="login.loading" data-style="expand-right" ng-disabled="!category.title" name="singlebutton" class="btn btn-primary segoe-ui-light ladda-button" type="submit"><span class="ladda-label">Publish</span></button>
+
+			  </div>
+			</div>
+
+			</fieldset>
+		</form>
+	
+
+    </div><!-- /.container -->
+
+    <div class="blog-footer">
+       <p>AngularJS & Firebase Blog App</p>
+    
+    </div>
+
+
+   
+  </body>
+</html>
+
