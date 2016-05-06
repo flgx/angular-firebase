@@ -20,6 +20,18 @@
  
 </head>
 <body>
+
+    <div class="blog-masthead">
+      <div class="container">
+        <nav class="blog-nav">
+          <a class="blog-nav-item " href="#/welcome">Home</a>
+          <a class="blog-nav-item active" href="#/addPost">Add Post</a>
+
+          <a class="blog-nav-item active" href="#/addTeam">Add Team</a>
+          <a class="blog-nav-item " style="cursor:pointer;" ng-click="logout();">Logout</a>
+        </nav>
+      </div>
+    </div>
   <div ng-view></div>
 
  
@@ -36,6 +48,7 @@
   <script src="register/register.js"></script>
   <script src="welcome/welcome.js"></script>
   <script src="addPost/addPost.js"></script>
+  <script src="addTeam/addTeam.js"></script>
   <script src="addCategory/addCategory.js"></script>
   <script src="spin.min.js"></script>
   <script src="ladda.js"></script>

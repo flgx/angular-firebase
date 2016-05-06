@@ -8,6 +8,7 @@ angular.module('myApp', [
   'myApp.welcome',
   'myApp.addPost',
   'myApp.addCategory',
+  'myApp.addTeam',
   'myApp.test'
 ]).
 config(['$routeProvider', function($routeProvider) {

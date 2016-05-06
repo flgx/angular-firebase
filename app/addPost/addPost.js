@@ -27,25 +27,26 @@ $scope.login=login;
     $scope.categories = sync.$asArray();
     console.log('ARTILE SCOPE');
     $scope.AddPost = function(){
-	login.loading = true;
-	var title = $scope.article.title;
-    var post = $scope.article.post;
-    var category = $scope.article.categorySelect;
-	
-	var firebaseObj = new Firebase("https://codedoors-angularfirebase.firebaseio.com/Articles");
-	
-    	var fb = $firebase(firebaseObj);
-        
-	var user = CommonProp.getUser();
-	
+		login.loading = true;
+		var title = $scope.article.title;
+	    var post = $scope.article.post;
+	    var category = $scope.article.categorySelect;
+		
 
-	fb.$push({ title: title,post: post,emailId: user, category: category,'.priority': user}).then(function(ref) {
-		login.loading = false;
-		$location.path('/welcome');
-	}, function(error) {
-		login.loading = false;
-  		console.log("Error:", error);
-	});
+		var firebaseObj = new Firebase("https://codedoors-angularfirebase.firebaseio.com/Articles");
+		
+	    	var fb = $firebase(firebaseObj);
+	        
+		var user = CommonProp.getUser();
+		
+
+		fb.$push({ title: title,post: post,emailId: user, category: category,'.priority': user }).then(function(ref) {
+			login.loading = false;
+			$location.path('/welcome');
+		}, function(error) {
+			login.loading = false;
+	  		console.log("Error:", error);
+		});
 
     }
 }]);
