@@ -9,8 +9,21 @@ angular.module('myApp', [
   'myApp.addPost',
   'myApp.addCategory',
   'myApp.addTeam',
+  'myApp.addDivision',
   'myApp.test'
-]).
-config(['$routeProvider', function($routeProvider) {
+]).config(['$routeProvider', function($routeProvider) {
   $routeProvider.otherwise({redirectTo: '/home'});
+}]).controller("LayoutController",['$rootScope','$scope','$firebase','$location','CommonProp',function($rootScope,$scope,$firebase,$location,CommonProp) {
+	if(!CommonProp.getUser()){
+   		 $location.path('/home');
+	}
+	
+    var login={};
+	$scope.login=login;
+	$scope.navbar = false;
+	$scope.logout = function(){
+    	CommonProp.logoutUser();
+	}
+
+
 }]);

@@ -9,7 +9,7 @@ angular.module('myApp.welcome', ['ngRoute'])
     });
 }])
 
-.controller('WelcomeCtrl', ['$scope', '$firebase','$location', 'CommonProp', function($scope, $firebase, $location ,CommonProp) {
+.controller('WelcomeCtrl', ['$rootScope','$scope', '$firebase','$location', 'CommonProp', function($rootScope,$scope, $firebase, $location ,CommonProp) {
     $scope.username = CommonProp.getUser();
 
    // $scope.username = CommonProp.getUser();
@@ -19,8 +19,8 @@ angular.module('myApp.welcome', ['ngRoute'])
     }
 
     var firebaseObj = new Firebase("https://codedoors-angularfirebase.firebaseio.com/Articles/");
-
-
+    $scope.navbar = true;
+   
     var sync = $firebase(firebaseObj.startAt($scope.username).endAt($scope.username));
 
     $scope.articles = sync.$asArray();

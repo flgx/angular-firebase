@@ -12,10 +12,11 @@ angular.module('myApp.addTeam', ['ngRoute'])
 .controller('AddTeamCtrl', ['$scope','$firebase','$location','CommonProp',function($scope,$firebase,$location,CommonProp) {
      
 	if(!CommonProp.getUser()){
-    $location.path('/home');
-}
+   		 $location.path('/home');
+	}
      var login={};
 	$scope.login=login;
+$scope.navbar = true;
 
 	$scope.logout = function(){
     	CommonProp.logoutUser();

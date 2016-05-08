@@ -16,6 +16,7 @@ angular.module('myApp.addPost', ['ngRoute'])
 }
      var login={};
 $scope.login=login;
+$scope.navbar = true;
 
 	$scope.logout = function(){
     CommonProp.logoutUser();
